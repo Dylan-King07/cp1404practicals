@@ -2,7 +2,7 @@
 def main():
     password = get_password()
     print_password_asterisks(password)
-
+# Function for inputting password info
 def get_password() -> str:
     minimum_length = int(input("Enter minimum character limit: "))
     password = input(f"Input password with at least {minimum_length} characters: ")
@@ -10,7 +10,7 @@ def get_password() -> str:
         print("Password too short")
         password = input(f"Input password with at least {minimum_length} characters: ")
     return password
-
+# Function for printing password asterisks
 def print_password_asterisks(password: str):
     print(f"Password: {'*' * len(password)}")
 
