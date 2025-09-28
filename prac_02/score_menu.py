@@ -1,64 +1,44 @@
-# def print_line(length):
-#     print('-' * length)
-#
-# def print_grid(number_of_rows, number_of_columns):
-#     #Version 1
-#     # for i in range(number_of_rows):
-#     #     for j in range(number_of_columns):
-#     #         print('*', end="")
-#     #     print()
-#     #Version 2
-#     # for i in range(number_of_rows):
-#     #     print('*' * number_of_columns)
-#     #Version 3
-#     print(f"{'*' * number_of_columns}\n" * number_of_rows)
-#
-#
-#
-#
-#
-#
-# print_grid(3, 7)
-# print()
-# print_grid(2, 50)
-
-import random
-
 def main():
-    print("Menu: ")
-    choice = input("> ").upper()
+    score = get_valid_score() # Gets initial score so that all menu options can be chosen first
+    menu = """Menu options:
+    G = Get valid score
+    P = Print result
+    S = Show stars
+    Q = Quit program"""
+    print(menu)
+    choice = input("Choose menu option: ").upper()
+    print(choice)
     while choice != "Q":
         if choice == "G":
-            name = get_valid_name()
+            score = get_valid_score()
         elif choice == "P":
-            print_greeting(name)
+            print(get_score_status(score))
         elif choice == "S":
-            print_secret_name(name)
+            print("*" * int(score))
         else:
             print("Invalid Choice")
-        print("Menu: ")
-        choice = input("> ").upper()
+        print(menu)
+        choice = input("Choose menu option: ").upper()
     print("Farewell")
-def print_greeting():
-    i = len(name)
-    print_line(i)
-    print(name)
-    print_line(i)
 
-def get_valid_name():
-    name = input("Name: ")
-    while name == "":
-        print("Invalid name")
-        name = input("Name: ")
-    return name
 
-def print_line(length):
-     print('-' * length)
+def get_valid_score():
+    score = float(input("Enter score between 0 and 100: ")) #This requires the user to input a number, if the user inputs a string, the program will error
+    while score < 0 or score > 100:
+        print("Invalid score")
+        score = float(input("Enter score between 0 and 100: "))
+    return score
 
-def print_secret_name(name):
-    letters = list(name)
-    random.shuffle(letters)
-    print("".join(letters))
+
+def get_score_status(score: float):
+    if score < 0 or score > 100:
+        return "Invalid score"
+    elif score >= 90:
+        return "Excellent"
+    elif score >= 50:
+        return "Passable"
+    else:
+        return "Bad"
 
 
 main()
