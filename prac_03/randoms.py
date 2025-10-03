@@ -1,4 +1,12 @@
 """
+Write code, not a comment, to produce a random number between 1 and 100 inclusive.
+"""
+import random
+
+print(random.randint(1, 100))
+
+
+"""
 What did you see on line 1?
 """
 # Line 1 printed a random integer between 5 and 20.
@@ -43,11 +51,3 @@ What did you see on line 3?
 What was the smallest number you could have seen, what was the largest?
 """
 # The smallest possible number is 2.5. The largest possible number is 5.5.
-
-
-"""
-Write code, not a comment, to produce a random number between 1 and 100 inclusive.
-"""
-import random
-print(random.randint(1, 100))
-
