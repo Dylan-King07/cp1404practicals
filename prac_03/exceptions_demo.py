@@ -23,7 +23,7 @@ print("Finished.")
 """
 1. When will a ValueError occur?
 """
-# A ValueError will occur when a letter, such as a, a float, such as 3.9 or symbol such as $ or # is entered.
+# A ValueError will occur when a letter, such as a or a float, such as 3.9 or symbol such as $ or # is entered.
 
 
 """
