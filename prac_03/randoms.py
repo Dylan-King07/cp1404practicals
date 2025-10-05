@@ -3,7 +3,7 @@ Write code, not a comment, to produce a random number between 1 and 100 inclusiv
 """
 import random
 
-print(random.randint(1, 100))
+print(random.randint(1, 100))  # Assume that question asked for an integer
 
 
 """
@@ -37,7 +37,7 @@ What was the smallest number you could have seen, what was the largest?
 """
 Could line 2 have produced a 4?
 """
-# No, because line 2 counts up 2 integers at a time, starting at 3. Therefore, 4 is skipped and 5 is counted.
+# No, because line 2 counts up 2 integers at a time, starting at 3. Therefore, 4 is skipped.
 
 
 """
