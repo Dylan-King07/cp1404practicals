@@ -11,16 +11,16 @@ def main():
     for i in range(number_of_picks):
         quick_pick = generate_quick_pick()
         quick_pick.sort()
-        print(" ".join(f"{num:2}" for num in quick_pick))
+        print(" ".join(f"{number:2}" for number in quick_pick))
 
 
 def generate_quick_pick():
     """Generate a quick pick with random numbers"""
     numbers = []
     while len(numbers) < NUMBERS_PER_PICK:
-        num = random.randint(MINIMUM_NUMBER, MAXIMUM_NUMBER)
-        if num not in numbers:
-            numbers.append(num)
+        number = random.randint(MINIMUM_NUMBER, MAXIMUM_NUMBER)
+        if number not in numbers:
+            numbers.append(number)
     return numbers
 
 
