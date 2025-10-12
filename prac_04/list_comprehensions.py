@@ -35,13 +35,12 @@ print(lowercase_full_names)
 
 almost_numbers = ['0', '10', '21', '3', '-7', '88', '9']
 # Create a list of integers from the above list of strings using list comprehension
-numbers = [int(number) for number in almost_numbers]
+numbers = [int(num) for num in almost_numbers]
 print(numbers)
 
 # Create a list of numbers greater than 9 from the list above using list comprehension
-number_above_nine = [number for number in numbers if number > 9]
-print(number_above_nine)
-
+number_greater_than_nine = [num for num in numbers if num > 9]
+print(number_greater_than_nine)
 
 # Create a string of last names greater than 11 characters using list comprehension and join string
 long_names = ", ".join([name.split()[1] for name in full_names if len(name) > 11])
