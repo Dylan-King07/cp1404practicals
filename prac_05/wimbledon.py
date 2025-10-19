@@ -16,10 +16,10 @@ def main():
     print_results(champion_win_counts, champion_countries)
 
 
-def load_champion_data(FILENAME):
+def load_champion_data(filename):
     """Read file and return list of champions and their countries"""
     records = []
-    with open(FILENAME, "r", encoding="utf-8-sig") as in_file:
+    with open(filename, "r", encoding="utf-8-sig") as in_file:
         next(in_file)
         for line in in_file:
             split_results_into_parts = line.strip().split(",")
