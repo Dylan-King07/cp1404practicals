@@ -13,10 +13,10 @@ COLOUR_HEX_CODE = {
 }
 
 # Input valid colour name and print HEX code
-input_colour_name = input("Enter colour name: ").lower()
+input_colour_name = input("Enter colour: ").lower()
 while input_colour_name != "":
     try:
-        print(f"{input_colour_name} has hex code {COLOUR_HEX_CODE[input_colour_name]}")
+        print(f"The HEX code for {input_colour_name} is: {COLOUR_HEX_CODE[input_colour_name]}")
     except KeyError:
         print("Invalid colour name")
     input_colour_name = input("Enter colour name: ").lower()
