@@ -9,7 +9,7 @@ class ProgrammingLanguage:
     """Represent programming language information."""
 
     def __init__(self, name, typing, reflection, year):
-        """Using available information, build ProgrammingLanguage.
+        """Using available information, initialise ProgrammingLanguage.
 
         name: string, language name
         typing: string, if language typing is 'static' or 'dynamic'
