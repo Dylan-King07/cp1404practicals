@@ -24,7 +24,7 @@ class ProgrammingLanguage:
 
     def __str__(self):
         """Return formatted string of ProgrammingLanguage values."""
-        return f"{self.name}, {self.typing} Typing, Reflection={self.reflection}, First appeared in {self.year}"
+        return f"{self.name}, {self.typing} typing, reflection={self.reflection}, first appeared in {self.year}"
 
     def is_dynamic(self):
         """If language is dynamically typed, return true."""

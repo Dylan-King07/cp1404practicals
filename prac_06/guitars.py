@@ -4,7 +4,7 @@ Estimated time: 10 minutes
 Actual time: 10 minutes
 """
 
-from prac_06.guitar import Guitar
+from guitar import Guitar
 
 
 def main():
@@ -30,7 +30,7 @@ def main():
             vintage_string = " (vintage)" if guitar.is_vintage() else ""
             print(f"Guitar {index}: {guitar.name:>20} ({guitar.year}), worth ${guitar.cost:10,.2f}{vintage_string}")
     else:
-        print("No guitars :( Maybe start by adding one!")
+        print("No guitars found, try adding one.")
 
 
 if __name__ == "__main__":
