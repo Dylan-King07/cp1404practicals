@@ -19,7 +19,8 @@ def main():
     for line in in_file:
         parts = line.strip().split(',')
         reflection = parts[2] == "Yes"
-        language = ProgrammingLanguage(parts[0], parts[1], reflection, int(parts[3]))
+        pointer_arithmetic = parts[4] == "Yes"
+        language = ProgrammingLanguage(parts[0], parts[1], reflection, int(parts[3]), pointer_arithmetic)
         languages.append(language)
     in_file.close()
 
