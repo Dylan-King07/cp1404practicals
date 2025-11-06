@@ -1,7 +1,7 @@
 """
-CP1404 Practical 6 Guitars! exercise
-Estimated time: 10 minutes
-Actual time: 12 minutes
+CP1404 prac_07 More Guitars! exercise
+Estimated time: 5 minutes
+Actual time: 5 minutes
 """
 
 
