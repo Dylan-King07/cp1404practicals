@@ -4,7 +4,7 @@ Estimated time: 30 minutes
 Actual time: 40 minutes
 """
 
-from datetime import date  # Not used yet, but will be used later
+from datetime import date
 
 
 class Project:
