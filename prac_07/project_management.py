@@ -34,8 +34,8 @@ def main():
             save_project(filename, loaded_projects)
         elif menu_option == "d":
             display_projects(loaded_projects)
-        # elif menu_option == "f":
-        #     # Filter projects in order of date function
+        elif menu_option == "f":
+            filter_project_dates(loaded_projects)
         # elif menu_option == "a":
         #     # Add new project function
         # elif menu_option == "u":
@@ -84,6 +84,16 @@ def display_projects(projects):
         print(f"{project}")
     print("Complete Projects: ")
     for project in complete_projects:
+        print(f"{project}")
+
+
+def filter_project_dates(projects):
+    """Display projects which start after specified date."""
+    choose_date = input("Show projects that start after date (dd/mm/yy): ")
+    convert_to_datetime = datetime.strptime(choose_date, "%d/%m/%Y").date()
+    filtered_dates = sorted([project for project in projects if project.start_date >= convert_to_datetime],
+                            key=lambda x: x.start_date)
+    for project in filtered_dates:
         print(f"{project}")
 
 
