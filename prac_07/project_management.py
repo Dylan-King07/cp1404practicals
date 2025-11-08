@@ -38,8 +38,8 @@ def main():
             filter_project_dates(loaded_projects)
         elif menu_option == "a":
             add_project(loaded_projects)
-        # elif menu_option == "u":
-        #     # Update project function
+        elif menu_option == "u":
+            update_project(loaded_projects)
         else:
             print("Please choose a valid option")
         print(MENU)
@@ -107,6 +107,21 @@ def add_project(projects):
     project_completion = int(input("Percent complete: "))
     new_project = Project(project_name, project_start_date, project_priority, project_cost_estimate, project_completion)
     projects.append(new_project)
+
+
+def update_project(projects):
+    """Update the details of a project"""
+    for index, project in enumerate(projects):
+        print(f"{index} {project}")
+    project_to_update = int(input("Project choice: "))
+    project = projects[int(project_to_update)]
+    print(project)
+    update_completion = input("New percentage: ")
+    if update_completion:
+        project.completion_percentage = int(update_completion)
+    update_priority = input("New priority: ")
+    if update_priority:
+        project.priority = int(update_priority)
 
 
 if __name__ == "__main__":
