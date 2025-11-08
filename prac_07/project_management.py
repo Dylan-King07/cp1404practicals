@@ -36,8 +36,8 @@ def main():
             display_projects(loaded_projects)
         elif menu_option == "f":
             filter_project_dates(loaded_projects)
-        # elif menu_option == "a":
-        #     # Add new project function
+        elif menu_option == "a":
+            add_project(loaded_projects)
         # elif menu_option == "u":
         #     # Update project function
         else:
@@ -95,6 +95,18 @@ def filter_project_dates(projects):
                             key=lambda x: x.start_date)
     for project in filtered_dates:
         print(f"{project}")
+
+
+def add_project(projects):
+    """Input details of new project and add to list"""
+    print("Let's add a new project")
+    project_name = input("Name: ")
+    project_start_date = datetime.strptime(input("Start date (dd/mm/yyyy): "), "%d/%m/%Y").date()
+    project_priority = int(input("Priority: "))
+    project_cost_estimate = float(input("Cost estimate: $"))
+    project_completion = int(input("Percent complete: "))
+    new_project = Project(project_name, project_start_date, project_priority, project_cost_estimate, project_completion)
+    projects.append(new_project)
 
 
 if __name__ == "__main__":
