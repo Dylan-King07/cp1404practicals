@@ -30,8 +30,8 @@ def main():
             filename = input("Enter name of file to load: ")
             load_projects(filename)
         elif menu_option == "s":
-            filename = input("Enter name of file to save to:")
-            # Save project function
+            filename = input("Enter name of file to save to: ")
+            save_project(filename, loaded_projects)
         # elif menu_option == "d":
         #     # Display project function
         # elif menu_option == "f":
@@ -49,7 +49,7 @@ def main():
 def load_projects(filename):
     """Open file and load projects from it."""
     projects = []
-    with (open(filename, "r", encoding="utf-8") as in_file):
+    with open(filename, "r", encoding="utf-8") as in_file:
         in_file.readline()  # Skip header row
         for line in in_file:
             project_fields = line.strip().split("\t")
@@ -59,6 +59,18 @@ def load_projects(filename):
             start_date = datetime.strptime(print_start_date, "%d/%m/%Y").date()
             projects.append(Project(name, start_date, int(priority),float(cost_estimate), int(completion)))
     return projects
+
+
+def save_project(filename, projects):
+    """Save projects to file."""
+    file_header = ["Name", "Start Date", "Priority", "Cost Estimate", "Completion Percentage"]
+    with open(filename, "w", encoding="utf-8") as out_file:
+        print("\t".join(file_header), file=out_file)
+        for project in projects:
+            file_row = [project.name, project.start_date.strftime("%d/%m/%Y"),
+                        str(project.priority), f"{project.cost_estimate}",
+                        str(project.completion_percentage)]
+            print("\t".join(file_row), file=out_file)
 
 
 if __name__ == "__main__":
