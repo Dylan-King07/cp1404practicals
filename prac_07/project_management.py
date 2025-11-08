@@ -5,7 +5,7 @@ Actual time: 1 day
 """
 
 
-from project import Project
+from prac_07.project import Project
 from datetime import datetime
 
 FILENAME = "projects.txt"
