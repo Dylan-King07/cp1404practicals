@@ -1,7 +1,7 @@
 """
 CP1404 prac_07 Project Management Program
 Estimated time: 1 hour
-Actual time:
+Actual time: 1 day
 """
 
 
