@@ -32,8 +32,8 @@ def main():
         elif menu_option == "s":
             filename = input("Enter name of file to save to: ")
             save_project(filename, loaded_projects)
-        # elif menu_option == "d":
-        #     # Display project function
+        elif menu_option == "d":
+            display_projects(loaded_projects)
         # elif menu_option == "f":
         #     # Filter projects in order of date function
         # elif menu_option == "a":
@@ -57,7 +57,7 @@ def load_projects(filename):
                 continue
             name, print_start_date, priority, cost_estimate, completion = project_fields
             start_date = datetime.strptime(print_start_date, "%d/%m/%Y").date()
-            projects.append(Project(name, start_date, int(priority),float(cost_estimate), int(completion)))
+            projects.append(Project(name, start_date, int(priority), float(cost_estimate), int(completion)))
     return projects
 
 
@@ -71,6 +71,20 @@ def save_project(filename, projects):
                         str(project.priority), f"{project.cost_estimate}",
                         str(project.completion_percentage)]
             print("\t".join(file_row), file=out_file)
+
+
+def display_projects(projects):
+    """Display projects which are complete and incomplete."""
+    sort_projects = sorted(projects)
+    complete_projects = [project for project in projects if project.is_job_complete(True)]
+    incomplete_projects = [project for project in projects if project.is_job_complete(False)]
+
+    print("Incomplete Projects: ")
+    for project in incomplete_projects:
+        print(f"{project}")
+    print("Complete Projects: ")
+    for project in complete_projects:
+        print(f"{project}")
 
 
 if __name__ == "__main__":

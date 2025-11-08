@@ -21,7 +21,7 @@ class Project:
         return (f"{self.name}, "
                 f"start: {self.start_date.strftime('%d/%m/%Y')}, "
                 f"priority {self.priority},"
-                f"estimate: {self.cost_estimate:,2f},"
+                f"estimate: {self.cost_estimate:,.2f},"
                 f"completion: {self.completion_percentage}%")
 
     def __lt__(self, other):
@@ -30,6 +30,6 @@ class Project:
 
     def is_job_complete(self, complete=True):
         """Determine if job is 100% completed or not."""
-        return self.completion_percentage if complete else self.completion_percentage != 100
+        return self.completion_percentage == 100 if complete else self.completion_percentage < 100
 
 
