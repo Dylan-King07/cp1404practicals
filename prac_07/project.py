@@ -4,8 +4,6 @@ Estimated time: 30 minutes
 Actual time: 40 minutes
 """
 
-from datetime import date
-
 
 class Project:
     """Represent the details of a project being managed."""

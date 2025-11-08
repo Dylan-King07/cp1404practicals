@@ -24,9 +24,30 @@ def main():
     loaded_projects = load_projects(FILENAME)
     print(f"Loaded {len(loaded_projects)} projects from {FILENAME}")
     print(MENU)
+    menu_option = input(">>> ").lower()
+    while menu_option != "q":
+        if menu_option == "l":
+            filename = input("Enter name of file to load: ")
+            load_projects(filename)
+        elif menu_option == "s":
+            filename = input("Enter name of file to save to:")
+            # Save project function
+        # elif menu_option == "d":
+        #     # Display project function
+        # elif menu_option == "f":
+        #     # Filter projects in order of date function
+        # elif menu_option == "a":
+        #     # Add new project function
+        # elif menu_option == "u":
+        #     # Update project function
+        else:
+            print("Please choose a valid option")
+        print(MENU)
+        menu_option = input(">>> ").lower()
 
 
 def load_projects(filename):
+    """Open file and load projects from it."""
     projects = []
     with (open(filename, "r", encoding="utf-8") as in_file):
         in_file.readline()  # Skip header row
