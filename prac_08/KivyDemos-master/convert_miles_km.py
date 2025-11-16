@@ -5,11 +5,12 @@ from kivy.properties import StringProperty
 MILES_TO_KM = 1.60934
 
 
-class ConvertMilesKm(App):
+class ConvertMilesKmApp(App):
     """Convert miles to kms using a kivy app"""
     km = StringProperty()
 
     def build(self):
+        """Build GUI"""
         self.title = "Convert Miles to Kilometers"
         self.root = Builder.load_file('convert_miles_km.kv')
         return self.root
@@ -35,5 +36,5 @@ class ConvertMilesKm(App):
             return 0.0
 
 
-ConvertMilesKm().run()
+ConvertMilesKmApp().run()
 
